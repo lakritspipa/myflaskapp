@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Companies</h1>
+  <br>
+  	<h5>Available buyingstatuses</h5>
+    {% for buyingstatus in buyingstatuses %}
+    <div class="alert alert-primary" role="alert">
+  	  {{ buyingstatus.text }}
+	</div>
+	{% endfor %}
+
+  <br>
+
+  	<h5>List of companies with current status</h5>
+	<ul class="list-group">
+		{% for company in companies %}
+		<li class="list-group-item"><a href="#">{{ company._id }} - {{ company.name }}</a><span style="float: right;">{{ company.buyingstatus.text }}</span></li>
+		{% endfor %}
+	</ul>
+  <br>
+
+
+{% endblock %}

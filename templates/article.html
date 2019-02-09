@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>{{ article.name }}</h1>
+	<small>Added by {{ article.createduser }} on {{ article.createdtime }}</small>
+	<hr>
+	<div>
+		{{ article.description }}
+	</div>
+{% endblock %}
